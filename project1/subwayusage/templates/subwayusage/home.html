@@ -384,7 +384,7 @@ $(function() {
         var station = $(this).attr('data-substation');
         // alert(station);
         $.ajax({
-            'url': '/subwayusage/' + SubStation,
+            'url': '/subwayusage' + pk,
             'method': 'GET',
             'success': function(data, status, xhr) {
 
