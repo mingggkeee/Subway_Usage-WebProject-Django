@@ -43,14 +43,16 @@
     <div class="col-md-6">
         <div class="card border-left-primary shadow h-100 py-2">
             <div class="card-header">
+                <strong class="card-title" id="station_line">Line Name</strong>
                 <strong class="card-title" id="station_title">Station Name</strong>
             </div>
             <div class="card-body">
                 
                     <div class="top-campaign-x">
-                        <h3 class="title-3 m-b-30">Information</h3>
+                        <h3 class="title-3 m-b-30">11월 상세 정보</h3>
                         <div class="table-responsive">
-                            <table class="table table-top-campaign" id="station_detail_table">
+                            <table class="table table-borderless table-striped table-earning" id="station_detail_table">
+                                
                                 <tbody>
                                     
                                 </tbody>
@@ -157,24 +159,15 @@
                 class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                 <h6 class="m-0 font-weight-bold text-primary">승차량 Overview</h6>
                 <div class="dropdown no-arrow">
-                    <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
-                    </a>
                     <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
                         aria-labelledby="dropdownMenuLink">
-                        <div class="dropdown-header">Dropdown Header:</div>
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Something else here</a>
                     </div>
                 </div>
             </div>
             <!-- Card Body -->
             <div class="card-body">
                 <div class="chart-area">
-                    <canvas id="myAreaChart"></canvas>
+                    <canvas id="pass_on_board_chart"></canvas>
                 </div>
             </div>
         </div>
@@ -186,37 +179,24 @@
             <!-- Card Header - Dropdown -->
             <div
                 class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                <h6 class="m-0 font-weight-bold text-primary">Revenue Sources</h6>
+                <h6 class="m-0 font-weight-bold text-primary">무임승차, 유임승차 비율</h6>
                 <div class="dropdown no-arrow">
-                    <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
-                    </a>
                     <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
                         aria-labelledby="dropdownMenuLink">
-                        <div class="dropdown-header">Dropdown Header:</div>
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Something else here</a>
                     </div>
                 </div>
             </div>
             <!-- Card Body -->
             <div class="card-body">
                 <div class="chart-pie pt-4 pb-2">
-                    <canvas id="myPieChart"></canvas>
+                    <canvas id=""></canvas>
                 </div>
                 <div class="mt-4 text-center small">
                     <span class="mr-2">
-                        <i class="fas fa-circle text-primary"></i> Direct
+                        <i class="fas fa-circle text-primary"></i> 무임승차
                     </span>
                     <span class="mr-2">
-                        <i class="fas fa-circle text-success"></i> Social
-                    </span>
-                    <span class="mr-2">
-                        <i class="fas fa-circle text-info"></i> Referral
-                    </span>
+                        <i class="fas fa-circle text-success"></i> 유임승차
                 </div>
             </div>
         </div>
@@ -235,24 +215,15 @@
                 class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                 <h6 class="m-0 font-weight-bold text-primary">하차량 Overview</h6>
                 <div class="dropdown no-arrow">
-                    <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
-                    </a>
                     <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
                         aria-labelledby="dropdownMenuLink">
-                        <div class="dropdown-header">Dropdown Header:</div>
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Something else here</a>
                     </div>
                 </div>
             </div>
             <!-- Card Body -->
             <div class="card-body">
                 <div class="chart-area">
-                    <canvas id="myAreaChart"></canvas>
+                    <canvas id="dise_on_board_chart"></canvas>
                 </div>
             </div>
         </div>
@@ -264,36 +235,24 @@
             <!-- Card Header - Dropdown -->
             <div
                 class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                <h6 class="m-0 font-weight-bold text-primary">Revenue Sources</h6>
+                <h6 class="m-0 font-weight-bold text-primary">무임하차, 유임하차 비율</h6>
                 <div class="dropdown no-arrow">
-                    <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
-                    </a>
                     <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
                         aria-labelledby="dropdownMenuLink">
-                        <div class="dropdown-header">Dropdown Header:</div>
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Something else here</a>
                     </div>
                 </div>
             </div>
             <!-- Card Body -->
             <div class="card-body">
                 <div class="chart-pie pt-4 pb-2">
-                    <canvas id="myPieChart"></canvas>
+                    <canvas id=""></canvas>
                 </div>
                 <div class="mt-4 text-center small">
                     <span class="mr-2">
-                        <i class="fas fa-circle text-primary"></i> Direct
+                        <i class="fas fa-circle text-primary"></i> 무임하차
                     </span>
                     <span class="mr-2">
-                        <i class="fas fa-circle text-success"></i> Social
-                    </span>
-                    <span class="mr-2">
-                        <i class="fas fa-circle text-info"></i> Referral
+                        <i class="fas fa-circle text-success"></i> 유임하차
                     </span>
                 </div>
             </div>
@@ -303,7 +262,7 @@
 
 
 
-        <!-- Approach -->
+        <!-- Approach
         <div class="card shadow mb-4">
             <div class="card-header py-3">
                 <h6 class="m-0 font-weight-bold text-primary">Development Approach</h6>
@@ -315,7 +274,7 @@
                 <p class="mb-0">Before working with this theme, you should become familiar with the
                     Bootstrap framework, especially the utility classes.</p>
             </div>
-        </div>
+        </div>-->
 
     </div>
 </div>
@@ -354,6 +313,7 @@ $(function() {
                 for (var idx = 0; idx < data.length; idx++) {
                     var tr = $(list_tr_html_str);
                     tr.attr('data-substation', data[idx].SubStation)
+                    tr.attr('data-subline', data[idx].SubLine)
                     var tds = tr.find('td');
                     tds.each(function(i, td){
 
@@ -370,7 +330,7 @@ $(function() {
     });
 
     // 검색된 목록 테이블에서 행을 클릭하면 클릭된 항목을 상세보기 처리
-    detail_td_names = ['SubLine', 'SubStation', 'pass_on_board', 'dise_pass'];
+    detail_td_names = ['날짜', '호선', '역명', '유임승차', '무임승차', '승차인원', '유임하차', '무임하차', '하차인원'];
     detail_tr_html_str = `<tr>
                             <td></td>
                             <td></td>
@@ -382,20 +342,23 @@ $(function() {
         event.stopPropagation();
 
         var station = $(this).attr('data-substation');
+        var line = $(this).attr('data-subline');
         // alert(station);
+
         $.ajax({
-            'url': '/subwayusage' + pk,
+            'url': '/subwayusage/detail/' + station,
             'method': 'GET',
             'success': function(data, status, xhr) {
 
-                $('#station_title').text(data[0].SubStation);
+                $('#station_line').text(data[0].호선);
+                $('#station_title').text(data[0].역명);
                 $('#station_detail_table').empty();
-
                 for (var idx=0; idx < detail_td_names.length; idx++){
                     var tr = $(detail_tr_html_str);
+
                     tds = tr.find('td');
                     $(tds[0]).text(detail_td_names[idx]);
-                 
+                    $(tds[1]).text(data[0][detail_td_names[idx]]);
                     $('#station_detail_table').append(tr);
 
                     show_chart(data);
@@ -408,8 +371,130 @@ $(function() {
     });
 
     function show_chart(data) {
+        var labels = []
+        var pass_person_list = []
+        var dise_person_list = []
+
+        for (var idx=0; idx < 5; idx++){
+            labels.push(data[idx][detail_td_names[0]]);   // 월별 목록
+            pass_person_list.push(data[idx][detail_td_names[5]]); // 승차인원 목록
+            dise_person_list.push(data[idx][detail_td_names[8]]); // 하차인원 목록
+        }
+        
+        show_pass_person_chart(labels, [pass_person_list]);
+        show_dise_person_chart(labels, [dise_person_list]);
+    }
+
+    var bar_chart1 = null;
+    function show_pass_person_chart(labels, datasets) {
+        //line chart
+        var ctx = $('#pass_on_board_chart'); // 그래프가 표시될 HTML 요소
+        if (ctx) {
+            ctx.height = 2000;
+
+            if (bar_chart1) {
+                bar_chart1.destroy();
+            }
+
+            bar_chart1 = new Chart(ctx, {
+                type: 'bar',
+                defaultFontFamily: 'Poppins',
+                data: {
+                labels: labels, // x축 데이터
+                datasets: [
+                    {
+                    label: "승차인원",
+                    data: datasets[0], // y축 데이터
+                    borderColor: "rgba(0, 123, 255, 0.9)",
+                    borderWidth: "0",
+                    backgroundColor: "rgba(0, 123, 255, 0.5)",
+                    fontFamily: "Poppins"
+                    },
+                ]
+                },
+                options: {
+                legend: {
+                    position: 'top',
+                    labels: {
+                    fontFamily: 'Poppins'
+                    }
+
+                },
+                scales: {
+                    xAxes: [{
+                    ticks: {
+                        fontFamily: "Poppins"
+
+                    }
+                    }],
+                    yAxes: [{
+                    ticks: {
+                        beginAtZero: true,
+                        fontFamily: "Poppins"
+                    }
+                    }]
+                }
+                }
+            });
+        }
+    }
+
+    var bar_chart2 = null;
+    function show_dise_person_chart(labels, datasets) {
+
+        var ctx = $('#dise_on_board_chart'); // 그래프가 표시될 HTML 요소
+        if (ctx) {
+            ctx.height = 2000;
+
+            if (bar_chart2) {
+                bar_chart2.destroy();
+            }
+            
+            bar_chart2 = new Chart(ctx, {
+                type: 'bar',
+                defaultFontFamily: 'Poppins',
+                data: {
+                labels: labels, // x축 데이터
+                datasets: [
+                    {
+                    label: "하차인원",
+                    data: datasets[0], // y축 데이터
+                    borderColor: "rgba(0, 123, 255, 0.9)",
+                    borderWidth: "0",
+                    backgroundColor: "rgba(0, 123, 255, 0.5)",
+                    fontFamily: "Poppins"
+                    },
+                ]
+                },
+                options: {
+                legend: {
+                    position: 'top',
+                    labels: {
+                    fontFamily: 'Poppins'
+                    }
+
+                },
+                scales: {
+                    xAxes: [{
+                    ticks: {
+                        fontFamily: "Poppins"
+
+                    }
+                    }],
+                    yAxes: [{
+                    ticks: {
+                        beginAtZero: true,
+                        fontFamily: "Poppins"
+                    }
+                    }]
+                }
+                }
+            });            
+        }
 
     }
+
+  
 
 });
 </script>

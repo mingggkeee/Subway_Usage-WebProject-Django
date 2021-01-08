@@ -28,7 +28,10 @@ class DetailView(View):
         from .subwayusage_repository import UsageRepository
         import json
 
-        usage = UsageRepository().select_subwayusage_by_substation(pk)
+        usage = UsageRepository().select_subwayusage_by_station(pk)
+
+        
+
         json_usage = json.dumps(usage, ensure_ascii=False)
         return HttpResponse(json_usage, content_type='application/json')
 
