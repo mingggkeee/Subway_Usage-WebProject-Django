@@ -10,7 +10,7 @@ class UsageRepository:
         conn = pymysql.connect(**self.connection_info)
         cursor = conn.cursor()
 
-        sql = 'select distinct SubLine, SubStation from subway_usages5 where SubStation like %s'
+        sql = 'select distinct SubLine, SubStation from subway_usages6 where SubStation like %s'
         cursor.execute(sql, ("%" + name_key + "%",))
 
         rows = cursor.fetchall()
@@ -31,7 +31,7 @@ class UsageRepository:
         conn = pymysql.connect(**self.connection_info)
         cursor = conn.cursor()
 
-        sql = 'select Date, SubLine, SubStation, pay_pass_on_board, free_pass_on_board, pass_on_board, pay_dise_pass, free_dise_pass, dise_pass from subway_usages5 where SubStation like %s'
+        sql = 'select Date, SubLine, SubStation, pay_pass_on_board, free_pass_on_board, pass_on_board, pay_dise_pass, free_dise_pass, dise_pass from subway_usages6 where SubStation like %s'
         cursor.execute(sql, ("%" + station + "%",))
 
         rows = cursor.fetchall()
