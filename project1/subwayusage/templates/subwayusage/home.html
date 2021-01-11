@@ -158,11 +158,7 @@
             <div
                 class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                 <h6 class="m-0 font-weight-bold text-primary">승차량 Overview</h6>
-                <div class="dropdown no-arrow">
-                    <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
-                        aria-labelledby="dropdownMenuLink">
-                    </div>
-                </div>
+                
             </div>
             <!-- Card Body -->
             <div class="card-body">
@@ -180,24 +176,14 @@
             <div
                 class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                 <h6 class="m-0 font-weight-bold text-primary">무임승차, 유임승차 비율</h6>
-                <div class="dropdown no-arrow">
-                    <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
-                        aria-labelledby="dropdownMenuLink">
-                    </div>
-                </div>
+               
             </div>
             <!-- Card Body -->
             <div class="card-body">
                 <div class="chart-pie pt-4 pb-2">
-                    <canvas id=""></canvas>
+                    <canvas id="pass_dise_pie_chart1"></canvas>
                 </div>
-                <div class="mt-4 text-center small">
-                    <span class="mr-2">
-                        <i class="fas fa-circle text-primary"></i> 무임승차
-                    </span>
-                    <span class="mr-2">
-                        <i class="fas fa-circle text-success"></i> 유임승차
-                </div>
+                
             </div>
         </div>
     </div>
@@ -214,11 +200,7 @@
             <div
                 class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                 <h6 class="m-0 font-weight-bold text-primary">하차량 Overview</h6>
-                <div class="dropdown no-arrow">
-                    <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
-                        aria-labelledby="dropdownMenuLink">
-                    </div>
-                </div>
+                
             </div>
             <!-- Card Body -->
             <div class="card-body">
@@ -236,25 +218,15 @@
             <div
                 class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                 <h6 class="m-0 font-weight-bold text-primary">무임하차, 유임하차 비율</h6>
-                <div class="dropdown no-arrow">
-                    <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
-                        aria-labelledby="dropdownMenuLink">
-                    </div>
+
                 </div>
             </div>
             <!-- Card Body -->
             <div class="card-body">
                 <div class="chart-pie pt-4 pb-2">
-                    <canvas id=""></canvas>
+                    <canvas id="pass_dise_pie_chart2"></canvas>
                 </div>
-                <div class="mt-4 text-center small">
-                    <span class="mr-2">
-                        <i class="fas fa-circle text-primary"></i> 무임하차
-                    </span>
-                    <span class="mr-2">
-                        <i class="fas fa-circle text-success"></i> 유임하차
-                    </span>
-                </div>
+               
             </div>
         </div>
     </div>
@@ -356,6 +328,7 @@ $(function() {
                 for (var idx=0; idx < detail_td_names.length; idx++){
                     var tr = $(detail_tr_html_str);
 
+
                     tds = tr.find('td');
                     $(tds[0]).text(detail_td_names[idx]);
                     $(tds[1]).text(data[0][detail_td_names[idx]]);
@@ -372,17 +345,40 @@ $(function() {
 
     function show_chart(data) {
         var labels = []
+        var labels2 = ['유임승차', '무임승차']
+        var labels3 = ['유임하차', '무임하차']
         var pass_person_list = []
         var dise_person_list = []
+        var pass_pay = []
+        var pass_pay_sum = 0
+        var pass_free = []
+        var pass_free_sum = 0
+        var dise_pay = []
+        var dise_pay_sum = 0
+        var dise_free = []
+        var dise_free_sum = 0
 
         for (var idx=0; idx < 12; idx++){
             labels.push(data[idx][detail_td_names[0]]);   // 월별 목록
             pass_person_list.push(data[idx][detail_td_names[5]]); // 승차인원 목록
             dise_person_list.push(data[idx][detail_td_names[8]]); // 하차인원 목록
         }
-        
+        for (var idx=0; idx < 12; idx++){
+            pass_pay_sum += data[idx][detail_td_names[3]];
+            pass_free_sum += data[idx][detail_td_names[4]];
+            dise_pay_sum += data[idx][detail_td_names[6]];
+            dise_free_sum += data[idx][detail_td_names[7]];
+        }
+
+        pass_pay.push(pass_pay_sum);
+        pass_free.push(pass_free_sum);
+        dise_pay.push(dise_pay_sum);
+        dise_free.push(dise_free_sum);
+
         show_pass_person_chart(labels, [pass_person_list]);
         show_dise_person_chart(labels, [dise_person_list]);
+        show_pie_chart1(labels2, [pass_pay], [pass_free]);
+        show_pie_chart2(labels3, [dise_pay], [dise_free]);
     }
 
     var bar_chart1 = null;
@@ -494,8 +490,75 @@ $(function() {
 
     }
 
-  
+    var pie_chart1 = null;
+    function show_pie_chart1(labels, datasets1, datasets2){
 
+        var ctx = $('#pass_dise_pie_chart1');
+        if (ctx) {
+            if (pie_chart1) {
+                pie_chart1.destroy();
+            }
+
+            pie_chart1 = new Chart(ctx, {
+                type: 'pie',
+                defaultFontFamily: 'Poppins',
+                data: {
+                labels: labels,
+                datasets: [
+                    {
+                    label: "비율",
+                    data: [datasets1, datasets2], // 파이그래프 표시될 데이터
+                    backgroundColor: [
+                        'rgb(255, 99, 132)',
+                        'rgb(54, 162, 235)'
+                    ],
+                    }
+                ]
+                },
+
+                options : {
+                    responsive : false
+                }
+            });
+        }
+
+    }
+
+    var pie_chart2 = null;
+    function show_pie_chart2(labels, datasets1, datasets2){
+
+        var ctx = $('#pass_dise_pie_chart2');
+        if (ctx) {
+            if (pie_chart2) {
+                pie_chart2.destroy();
+            }
+
+            pie_chart2 = new Chart(ctx, {
+                type: 'pie',
+                defaultFontFamily: 'Poppins',
+                data: {
+                labels: labels,
+                datasets: [
+                    {
+                    label: "비율",
+                    data: [datasets1, datasets2], // 파이그래프 표시될 데이터
+                    backgroundColor: [
+                        'rgb(255, 99, 132)',
+                        'rgb(54, 162, 235)'
+                    ],
+                    }
+                ]
+                },
+
+                options : {
+                    responsive : false
+                }
+            });
+        }
+
+    }
+
+    
 });
 </script>
 {% endblock custom_js %}
