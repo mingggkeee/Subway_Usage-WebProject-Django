@@ -50,13 +50,10 @@
                     <span>Subway_Usage</span></a>
             </li>
             <li class="nav-item active">
-                <a class="nav-link" href="http://localhost:8000/">
+                <a class="nav-link" href="http://localhost:8000/review">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
-                    <span>Comment</span></a>
+                    <span>Review</span></a>
             </li>
-            
-
-            
 
             <!-- Divider -->
             <hr class="sidebar-divider">
@@ -113,10 +110,7 @@
 
                     <!-- Topbar Navbar -->
                     <ul class="navbar-nav ml-auto">
-
-                    
                         
-
                         <!-- Nav Item - User Information -->
                         <li class='nav-item dropdown no-arrow'>
                             {% if user.is_active %}
@@ -171,13 +165,13 @@
                 <div class="container-fluid">
                     {% block main_content %}
                     {% endblock main_content %}
-                    
+                </div>
             <!-- Footer -->
             {% include 'copyright.html' %}
             
             <!-- End of Footer -->
 
-            </div>
+            
         <!-- End of Content Wrapper -->
 
         </div>

@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block page_title %}
+    <title>Review_Create Home</title>
+{% endblock page_title %}
+
+{% block main_content %}
+
+
+<div class="container">
+	<h1> 리뷰 남기기 </h1>
+<hr>
+
+<br>
+	<form action="{% url 'postcreate' %}">
+	  <h4>제목: </h4>
+	  <input type="text" name="title">
+	  <br>
+	  <br>
+	  <h4>본문: </h4>
+	  <textarea cols=40 rows=10 name="body"></textarea>
+	  <br>
+	  <br>
+	  <input class="btn btn-dark" type="submit" value="글쓰기">
+  </form>
+</div>
+
+{% endblock main_content %}

@@ -27,5 +27,5 @@ urlpatterns = [
     path('accounts/register/done/', UserCreateDoneTV.as_view(), name='register_done'),
 
     path('subwayusage/', include('subwayusage.urls')),
-    path('post/', include('post.urls')),
+    path('review/', include('review.urls')),
 ]

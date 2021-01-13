@@ -44,7 +44,8 @@ INSTALLED_APPS = [
 
     #custom Apps
     'subwayusage.apps.SubwayusageConfig',
-    'post.apps.PostConfig',
+    'review.apps.ReviewConfig',
+    
 ]
 
 MIDDLEWARE = [
