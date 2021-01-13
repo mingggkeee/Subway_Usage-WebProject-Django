@@ -8,7 +8,7 @@
 <!-- Page Heading -->
 <div class="d-sm-flex align-items-center justify-content-between mb-4">
     <h1 class="h3 mb-0 text-gray-800">Subway_Usage</h1>
-    <a href="http://localhost:8000/review/create" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+    <a href="http://localhost:8000/review/" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
             class="fas fa-download fa-sm text-white-50"></i> Report(평가하기)</a>
 </div>
 <!-- Content Row -->
@@ -71,7 +71,7 @@
 
     <!-- Area Chart -->
     <div class="col-xl-8 col-lg-7">
-        <div class="card shadow mb-4">
+        <div class="card border-left-primary shadow h-100 py-2">
             <!-- Card Header - Dropdown -->
             <div
                 class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
@@ -79,17 +79,17 @@
                 
             </div>
             <!-- Card Body -->
-            <div class="card border-left-primary shadow h-100 py-2">
-                <div class="chart-area">
+            <div class="card-body">
+                
                     <canvas id="pass_on_board_chart"></canvas>
-                </div>
+                
             </div>
         </div>
     </div>
 
     <!-- Pie Chart -->
     <div class="col-xl-4 col-lg-5">
-        <div class="card shadow mb-4">
+        <div class="card border-left-primary shadow h-100 py-2">
             <!-- Card Header - Dropdown -->
             <div
                 class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
@@ -97,10 +97,10 @@
                
             </div>
             <!-- Card Body -->
-            <div class="card border-left-primary shadow h-100 py-2">
-                <div class="chart-pie pt-4 pb-2">
-                    <canvas id="pass_dise_pie_chart1"></canvas>
-                </div>
+            <div class="card-body">
+                
+                    <canvas id="pass_dise_pie_chart1" width="300" height="300"></canvas>
+               
                 
             </div>
         </div>
@@ -113,7 +113,7 @@
 
     <!-- Area Chart -->
     <div class="col-xl-8 col-lg-7">
-        <div class="card shadow mb-4">
+        <div class="card border-left-primary shadow h-100 py-2">
             <!-- Card Header - Dropdown -->
             <div
                 class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
@@ -121,17 +121,17 @@
                 
             </div>
             <!-- Card Body -->
-            <div class="card border-left-primary shadow h-100 py-2">
-                <div class="chart-area">
+            <div class="card-body">
+               
                     <canvas id="dise_on_board_chart"></canvas>
-                </div>
+                
             </div>
         </div>
     </div>
 
     <!-- Pie Chart -->
     <div class="col-xl-4 col-lg-5">
-        <div class="card shadow mb-4">
+        <div class="card border-left-primary shadow h-100 py-2">
             <!-- Card Header - Dropdown -->
             <div
                 class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
@@ -139,10 +139,10 @@
                
             </div>
             <!-- Card Body -->
-            <div class="card border-left-primary shadow h-100 py-2">
-                <div class="chart-pie pt-4 pb-2">
-                    <canvas id="pass_dise_pie_chart2"></canvas>
-                </div>
+            <div class="card-body">
+                
+                    <canvas id="pass_dise_pie_chart2" width="300" height="300"></canvas>
+                
                 
             </div>
         </div>
@@ -358,7 +358,7 @@ $(function() {
                     },
                     scaleLabel: {
                         display: true,
-                        labelString: 'Value',
+                        
                         fontFamily: "Poppins"
 
                     },
@@ -446,7 +446,7 @@ $(function() {
                     },
                     scaleLabel: {
                         display: true,
-                        labelString: 'Value',
+                        
                         fontFamily: "Poppins"
 
                     },
@@ -468,6 +468,10 @@ $(function() {
 
         var ctx = $('#pass_dise_pie_chart1');
         if (ctx) {
+
+            ctx.width = 1000;
+            ctx.height = 1000;
+
             if (pie_chart1) {
                 pie_chart1.destroy();
             }
@@ -491,6 +495,7 @@ $(function() {
 
                 options : {
                     responsive : false
+                    
                 }
             });
         }
